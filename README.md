@@ -1,3 +1,15 @@
+# NuvigatorControleRotasFormacaoFlutterAlura
+
+## Neste projeto:
+
+- Flutter Nuvigator: controle de rotas e navegação:
+
+  - https://cursos.alura.com.br/course/flutter-nuvigator-controle-rotas-navegacao
+
+* Fork do projeto previamente fornecido pela Alura.
+
+## 
+
 ![Thumbnail GitHub](thumb.png)
 
 # E-commerce Orgs
