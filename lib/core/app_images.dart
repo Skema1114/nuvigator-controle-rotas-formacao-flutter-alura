@@ -1,5 +1,4 @@
 class AppImages {
-
   static String get logo => "assets/images/logo.png";
   static String get logo_icon => "assets/images/logo_icon.png";
   static String get person => "assets/images/person.jpg";
