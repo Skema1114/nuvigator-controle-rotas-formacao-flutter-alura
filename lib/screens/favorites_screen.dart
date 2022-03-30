@@ -1,4 +1,3 @@
-import 'package:nuvigator/next.dart';
 import 'package:flutter/material.dart';
 import 'package:proj/repository/data.dart';
 import 'package:proj/core/app_colors.dart';
@@ -8,6 +7,9 @@ import 'package:proj/components/orgs_stores_card.dart';
 
 class FavoritesScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final onProducerClick;
+
+  FavoritesScreen({this.onProducerClick});
 
   @override
   Widget build(BuildContext context) {
@@ -73,8 +75,6 @@ class FavoritesScreen extends StatelessWidget {
   }
 
   Future _generateProducerList(BuildContext context) async {
-    final nuvigator = Nuvigator.of(context);
-
     List<Widget> children = [];
     final data = await Data.getJson();
     final producers = data["producers"];
@@ -83,10 +83,7 @@ class FavoritesScreen extends StatelessWidget {
       final prod = Producer.fromJson(producers[producer]);
 
       children.add(OrgsStoresCard(
-        action: () => nuvigator.open(
-          'producer-details',
-          parameters: {'producer': prod},
-        ),
+        action: () => onProducerClick({'producer': prod}),
         img: prod.logo,
         distance: prod.distance,
         title: prod.name,

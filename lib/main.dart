@@ -1,15 +1,6 @@
-import 'package:nuvigator/next.dart';
 import 'package:flutter/material.dart';
-import 'package:proj/screens/home_screen.dart';
-import 'package:proj/models/package_model.dart';
-import 'package:proj/screens/login_screen.dart';
-import 'package:proj/screens/singup_screen.dart';
-import 'package:proj/models/producer_model.dart';
-import 'package:proj/screens/payment_screen.dart';
-import 'package:proj/screens/profile_screen.dart';
-import 'package:proj/screens/favorites_screen.dart';
-import 'package:proj/screens/package_details_screen.dart';
-import 'package:proj/screens/producer_details_screen.dart';
+import 'package:nuvigator/next.dart';
+import 'package:proj/router.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +14,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Montserrat',
       ),
-/*       home: MaterialApp(
+      home: Nuvigator(
+        router: MyRouter(),
+      ),
+      /*
+        FORMA 'INLINE' DE REFERENCIAR AS ROTAS (NÃO É DINAMICO)
+        home: MaterialApp(
         title: 'Nuvigator App',
         builder: Nuvigator.routes(
           screenType: materialScreenType,
@@ -73,7 +69,8 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
-      ), */
+      ), 
+      */
     );
   }
 }
