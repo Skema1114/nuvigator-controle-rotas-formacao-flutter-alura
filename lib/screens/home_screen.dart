@@ -1,3 +1,4 @@
+import 'package:nuvigator/next.dart';
 import 'package:flutter/material.dart';
 import 'package:proj/core/app_colors.dart';
 import 'package:proj/core/app_images.dart';
@@ -135,15 +136,15 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Widget> children = [];
     final data = await Data.getJson();
     final producers = data["producers"];
+    final nuvigator = Nuvigator.of(context);
 
     for (final producer in producers.keys) {
       final prod = Producer.fromJson(producers[producer]);
 
       children.add(OrgsStoresCard(
-        action: () => Navigator.pushNamed(
-          context,
+        action: () => nuvigator.open(
           'producer-details',
-          arguments: prod,
+          parameters: {'producer': prod},
         ),
         img: prod.logo,
         distance: prod.distance,
