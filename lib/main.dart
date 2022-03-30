@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
         router: MyRouter(),
       ),
       /*
-        FORMA 'INLINE' DE REFERENCIAR AS ROTAS (NÃO É DINAMICO)
+        FORMA 'INLINE' DE REFERENCIAR AS ROTAS (NÃO É TÃO DINAMICO)
+
         home: MaterialApp(
         title: 'Nuvigator App',
         builder: Nuvigator.routes(
